@@ -1,0 +1,234 @@
+
+:root {
+  --color-fondo: #0a0a0c;         
+  --color-superficie: #16161a;    
+  --color-borde: #26262e;         
+  
+  --color-primario: #00f0ff;       
+  --color-secundario: #ff007f;   
+  --color-destaque: #ffe600;       
+
+  --color-texto-principal: #f4f4f6;
+  --color-texto-secundario: #9e9ea7;
+  
+  --fuente-titulos: 'Montserrat', sans-serif;
+  --fuente-cuerpo: 'Open Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.barra-navegacion {
+  background-color: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logotipo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lista-navegacion {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.enlace-navegacion {
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.enlace-navegacion:hover,
+.enlace-navegacion.activo {
+  color: var(--color-primario);
+}
+
+
+.titulo-principal {
+  font-family: var(--fuente-titulos);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-texto-principal);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitulo-seccion {
+  font-family: var(--fuente-titulos);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin-bottom: 1.5rem;
+}
+
+.titulo-tarjeta {
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-texto-principal);
+  margin-bottom: 0.75rem;
+}
+
+.texto-destacado {
+  font-size: 1.15rem;
+  color: var(--color-texto-secundario);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.texto-cuerpo {
+  font-size: 1rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 1rem;
+}
+
+
+.contenedor-principal {
+  flex: 1;
+  max-width: 1100px;
+  width: 90%;
+  margin: 2.5rem auto;
+}
+
+.seccion-hero {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--color-borde);
+  margin-bottom: 3rem;
+}
+
+.cuadricula-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tarjeta {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 1.8rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primario);
+}
+
+.etiqueta-destaque {
+  display: inline-block;
+  background-color: rgba(255, 230, 0, 0.12);
+  color: var(--color-destaque);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+.boton-primario {
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: #050508;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.boton-primario:hover {
+  opacity: 0.85;
+}
+
+.formulario-contacto {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.grupo-formulario {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.etiqueta-campo {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-texto-principal);
+}
+
+.campo-texto,
+.area-texto {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--color-texto-principal);
+  font-size: 1rem;
+}
+
+.campo-texto:focus,
+.area-texto:focus {
+  outline: 2px solid var(--color-primario);
+  border-color: transparent;
+}
+
+.boton-envio {
+  border: none;
+  cursor: pointer;
+}
+
+.pie-pagina {
+  background-color: var(--color-superficie);
+  border-top: 1px solid var(--color-borde);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.texto-copyright {
+  color: var(--color-texto-secundario);
+  font-size: 0.85rem;
+}
